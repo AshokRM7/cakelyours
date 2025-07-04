@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>All Orders - Admin</title>
+</head>
+<body>
+<h2>All Cake Orders</h2>
+
+<table border="1" cellpadding="8">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Cake Type</th>
+    <th>Delivery Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="order : ${orders}">
+    <td th:text="${order.id}"></td>
+    <td th:text="${order.customerName}"></td>
+    <td th:text="${order.cakeType}"></td>
+    <td th:text="${order.deliveryDate}"></td>
+  </tr>
+  </tbody>
+</table>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<p><a href="/">Back to Home</a></p>
+</body>
+</html>

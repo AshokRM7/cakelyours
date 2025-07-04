@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Order Cake</title>
+</head>
+<body>
+<h2>Order Your Cake</h2>
+
+<form th:action="@{/submitOrder}" method="post">
+  Name: <input type="text" name="customerName" required><br><br>
+
+  Cake Type:
+  <select name="cakeType">
+    <option>Chocolate</option>
+    <option>Vanilla</option>
+    <option>Red Velvet</option>
+    <option>Custom</option>
+  </select><br><br>
+
+  Delivery Date: <input type="date" name="deliveryDate" required><br><br>
+
+  <button type="submit">Place Order</button>
+</form>
+
+<p th:if="${param.success}" style="color:green;">Order placed successfully!</p>
+<p><a href="/">Back to Home</a></p>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</body>
+</html>
+<!-- This is the order.html template for placing cake orders. -->

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cake Gallery</title>
+</head>
+<body>
+
+<h2>Cake Gallery</h2>
+
+<div style="display: flex; flex-wrap: wrap;">
+    <div th:each="img : ${images}" style="margin: 10px;">
+        <img th:src="@{'/images/' + ${img}}" width="200" height="200" style="border: 1px solid #ccc;">
+        <p th:text="${img}"></p>
+    </div>
+</div>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<p><a href="/">Back to Home</a></p>
+
+</body>
+</html>
